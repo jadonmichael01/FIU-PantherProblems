@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+   <title>Panther Problems</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="style.css">
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="client.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <style type="text/css">
+       input,
+       textarea {
+           border-radius: 60px;
+       }
+   </style>
+
+
+  <style>
+      .anybutton {
+      top:3%;
+      left:1%;
+      width:50px;
+      height:49px;
+      position: absolute;
+      z-index: 2;
+      background: #081427;
+      }
+
+
+
+
+     </style>
+</head>
+
+
+
+
+<body style="background-color: #081427;">
+   <div id="header" class="grid-container">
+       <div class="grid-item"></div>
+       <center>
+         <a href="https://www.fiu.edu/" target="_blank" rel="nonopener nonferrer">
+           <img src="roary.jpeg" alt="FIU" width="200" height="100">
+         </a>
+       </center>
+       <div class="grid-item"></div>
+   </div>
+    <!-- ^ this is the header section that says FIU -->
+   <div class="chatbox_grid_container">
+       <div id="AI" class="AIcolumn"></div>
+       <div id="USER" class="usercolumn" id="chatbox"></div>
+      </div>
+    <!--ASK A QUESTION BOX -->
+   <div id="user-input-box" class="input-container">
+      <div id="user-input-box" class="input-container">
+            
+ <div id="inputbox" class="input">
+                
+ <INPUT type="text" STYLE="color:white; font-family: sans-serif; font-weight: ; font-size: 15px; background-color: #152E52" size="10" id="userinput" class="inputcol" placeholder="  Ask Panther Problem">
+                
+     </div>
+  </div>
+    
+       <!-- SEND BUTTON -->
+       <div id="button" class="send_button">
+           <button id="sendbutton" class="sendbutton" onclick="sendMessage()">
+               <i class="material-icons" style="font-size:48px;color:white">send</i>
+           </button>
+       </div>
+    
+   </div>
+</body>
+
+
+
+
+</html>
