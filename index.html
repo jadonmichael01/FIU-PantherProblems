@@ -1,80 +1,193 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
-   <title>Panther Problems</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="style.css">
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-   <script src="client.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <style type="text/css">
-       input,
-       textarea {
-           border-radius: 60px;
+    <title>Ask Roary</title>
+
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <!-- <script type="text/javascript" src="cleints].js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style type="text/css">
+        input,
+        textarea {
+            border-radius: 60px;
+        }
+    </style>
+
+   <style>
+       .anybutton {
+       top:3%;
+       left:1%;
+       width:50px;
+       height:49px;
+       position: absolute;
+       z-index: 2;
+       background: #081427; 
        }
-   </style>
 
 
-  <style>
-      .anybutton {
-      top:3%;
-      left:1%;
-      width:50px;
-      height:49px;
-      position: absolute;
-      z-index: 2;
-      background: #081427;
-      }
-
-
-
-
-     </style>
+      </style>
 </head>
 
-
-
-
+  
 <body style="background-color: #081427;">
-   <div id="header" class="grid-container">
-       <div class="grid-item"></div>
-       <center>
-         <a href="https://www.fiu.edu/" target="_blank" rel="nonopener nonferrer">
-           <img src="roary.jpeg" alt="FIU" width="200" height="100">
-         </a>
-       </center>
-       <div class="grid-item"></div>
-   </div>
-    <!-- ^ this is the header section that says FIU -->
-   <div class="chatbox_grid_container">
-       <div id="AI" class="AIcolumn"></div>
-       <div id="USER" class="usercolumn" id="chatbox"></div>
-      </div>
-    <!--ASK A QUESTION BOX -->
-   <div id="user-input-box" class="input-container">
-      <div id="user-input-box" class="input-container">
-            
- <div id="inputbox" class="input">
-                
- <INPUT type="text" STYLE="color:white; font-family: sans-serif; font-weight: ; font-size: 15px; background-color: #152E52" size="10" id="userinput" class="inputcol" placeholder="  Ask Panther Problem">
-                
-     </div>
+    <div id="header" class="grid-container">
+        <div class="grid-item"></div>
+        <center>
+            <a href="https://www.fiu.edu/" target="_blank" rel="nonopener nonferrer">
+                <img src="images/fiu-white-logo.png" alt="FIU" width="200" height="100">
+            </a>
+        </center>
+        <div class="grid-item"></div>
+
+
+<!-- SIDEBAR -->
+      
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Sidebar with Icon</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <!-- Font Awesome icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom CSS -->
+  <style>
+    /* Set a background color for the sidebar */
+    .sidebar {
+      background-color: #081E3F;
+      height: 100%;
+      width: 150px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: all 0.3s ease-in-out;
+      opacity: 50%;
+      
+    }
+
+    /* Show the sidebar when the user clicks the icon */
+    .sidebar.active {
+      left: 0;
+    }
+
+    /* Style the icon */
+    .sidebar-icon {
+/*       font-size: 28px;
+      color: #555;
+      cursor: pointer;
+      position: flex; */
+
+      position: fixed;
+	left: 20px;
+	top: 100px;
+	font-size: 24px;
+	background-color: transparent;
+	color:grey ;
+	border: none;
+	cursor: pointer;
+    }
+
+    /* Style the dropdown links */
+    .dropdown-link {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+/*     hover color */
+    .dropdown-link:hover {
+      background-color: #B0e0e6;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+  <div class="sidebar">
+    <a href="https://login.fiu.edu/" class="dropdown-link">Canvas Login</a>
+    <a href="https://it.fiu.edu/" class="dropdown-link">FIU IT</a>
+<!--     <a href="#" class="dropdown-link">LINK 3</a> -->
   </div>
-    
-       <!-- SEND BUTTON -->
-       <div id="button" class="send_button">
-           <button id="sendbutton" class="sendbutton" onclick="sendMessage()">
-               <i class="material-icons" style="font-size:48px;color:white">send</i>
-           </button>
-       </div>
-    
+  </div>
+
+  
+  <div class="main-content">
+    <i class="fas fa-bars sidebar-icon" onclick="toggleSidebar()"></i>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    function toggleSidebar() {
+      $('.sidebar').toggleClass('active');
+    }
+  </script>
+</body>
+
+
+      
+    </div>
+  
+    <!-- ^ this is the header section that says FIU -->
+    <div id="chatbox_grid_container">
+      
+    </div>
+  
+    <!--ASK A QUESTION BOX -->
+    <div id="user-input-box" class="input-container">
+    <div id="user-input-box" class="input-container">
+
+              
+  <div id="inputbox" class="input">
+                  
+  <INPUT type="text" STYLE="color:white; font-family: sans-serif; font-weight: 1; font-size: 15px; background-color: #081427" size="10" id="userinput" class="inputcol" placeholder="  Ask Panther Problem">
+                  
+      </div>
    </div>
+      
+        <!-- SEND BUTTON -->
+        <div id="button" class="send_button">
+            <button id="sendbutton" class="sendbutton" onclick="sendMessage()">
+                <i class="material-icons" style="font-size:35px;color:white">send</i>
+            </button>
+        </div>
+      
+    </div>
+
+    
+    <script>
+      // This is for the enter key to call the btn
+
+      let userInput = document.querySelector("#userinput");
+
+      userInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+
+          document.querySelector("#sendbutton").click();
+        }
+
+        let chatHistory = document.querySelector("#chatbox_grid_container");
+
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+      });
+    </script>
 </body>
 
 
 
+
+  
 
 </html>
